@@ -3,7 +3,6 @@
 <img src="./assets/header.svg" width="100%" alt="Philipp Klunder — Application Developer EFZ apprentice from Switzerland"/>
 
 <a href="https://www.linkedin.com/in/philipp-klunder-1b2701326"><img src="https://img.shields.io/badge/LinkedIn-Philipp_Klunder-BE123C?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=130C11" alt="LinkedIn"/></a>
-<img src="https://komarev.com/ghpvc/?username=philklunder&style=for-the-badge&color=FDA4AF&label=PROFILE+VIEWS&labelColor=130C11" alt="Profile views"/>
 
 </div>
 
