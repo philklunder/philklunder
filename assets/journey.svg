@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="250" viewBox="0 0 840 250" role="img" aria-label="Journey: from first C# apps in 2025 to intern building a full-stack platform">
+<defs>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#22D3EE"/><stop offset="1" stop-color="#F472B6"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6" stop-opacity=".7"/><stop offset=".5" stop-color="#1E2742"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".7"/>
+  </linearGradient></defs>
+<style>
+  .h{font:700 20px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#E6EAF2}
+  .line{stroke-dasharray:680;stroke-dashoffset:680;animation:draw 2.2s .2s cubic-bezier(.4,0,.2,1) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .node{opacity:0;animation:in .5s cubic-bezier(.2,.8,.2,1.4) forwards}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .d{font:700 11px ui-monospace, SFMono-Regular, 'Cascadia Code', Consolas, 'Liberation Mono', monospace;fill:#22D3EE;letter-spacing:1px}
+  .t{font:700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#E6EAF2}.s{font:12px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#8B95A9}
+  .pulse{transform-box:fill-box;transform-origin:center;animation:ping 2s ease-out infinite}
+  @keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}
+</style>
+<rect x="1" y="1" width="838" height="248" rx="18" fill="#0A0E1A" stroke="url(#edge)" stroke-width="1.5"/>
+<text class="h" x="36" y="46">The road so far</text>
+<path d="M80 118H760" stroke="#1E2742" stroke-width="3" stroke-linecap="round"/>
+<path class="line" d="M80 118H760" stroke="url(#brand)" stroke-width="3" stroke-linecap="round"/>
+<g class="node" style="animation-delay:0.30s">
+  
+  <circle cx="80" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
+  <circle cx="80" cy="118" r="3.5" fill="#E6EAF2"/>
+  <text class="d" x="80" y="92" text-anchor="middle">2025</text>
+  <text class="t" x="80" y="156" text-anchor="middle">First steps</text>
+  <text class="s" x="80" y="176" text-anchor="middle">C# to-do app</text>
+  <text class="s" x="80" y="193" text-anchor="middle">&amp; calculator</text></g>
+<g class="node" style="animation-delay:0.65s">
+  
+  <circle cx="216" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
+  <circle cx="216" cy="118" r="3.5" fill="#E6EAF2"/>
+  <text class="d" x="216" y="92" text-anchor="middle">2025</text>
+  <text class="t" x="216" y="156" text-anchor="middle">First website</text>
+  <text class="s" x="216" y="176" text-anchor="middle">Recipe book in</text>
+  <text class="s" x="216" y="193" text-anchor="middle">HTML · CSS · JS</text></g>
+<g class="node" style="animation-delay:1.00s">
+  
+  <circle cx="352" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
+  <circle cx="352" cy="118" r="3.5" fill="#E6EAF2"/>
+  <text class="d" x="352" y="92" text-anchor="middle">Dec 25</text>
+  <text class="t" x="352" y="156" text-anchor="middle">Exam project</text>
+  <text class="s" x="352" y="176" text-anchor="middle">Secure employee</text>
+  <text class="s" x="352" y="193" text-anchor="middle">app in C#</text></g>
+<g class="node" style="animation-delay:1.35s">
+  
+  <circle cx="488" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
+  <circle cx="488" cy="118" r="3.5" fill="#E6EAF2"/>
+  <text class="d" x="488" y="92" text-anchor="middle">Mar 26</text>
+  <text class="t" x="488" y="156" text-anchor="middle">Going mobile</text>
+  <text class="s" x="488" y="176" text-anchor="middle">Angular + Ionic</text>
+  <text class="s" x="488" y="193" text-anchor="middle">GPS · QR · sensors</text></g>
+<g class="node" style="animation-delay:1.70s">
+  
+  <circle cx="624" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
+  <circle cx="624" cy="118" r="3.5" fill="#E6EAF2"/>
+  <text class="d" x="624" y="92" text-anchor="middle">Jul 26</text>
+  <text class="t" x="624" y="156" text-anchor="middle">cram</text>
+  <text class="s" x="624" y="176" text-anchor="middle">iOS · FastAPI</text>
+  <text class="s" x="624" y="193" text-anchor="middle">+ Claude</text></g>
+<g class="node" style="animation-delay:2.05s">
+  <circle class="pulse" cx="760" cy="118" r="9" fill="#22D3EE"/>
+  <circle cx="760" cy="118" r="9" fill="#0A0E1A" stroke="#22D3EE" stroke-width="3"/>
+  <circle cx="760" cy="118" r="3.5" fill="#22D3EE"/>
+  <text class="d" x="760" y="92" text-anchor="middle">Now</text>
+  <text class="t" x="760" y="156" text-anchor="middle">Intern</text>
+  <text class="s" x="760" y="176" text-anchor="middle">Full-stack platform</text>
+  <text class="s" x="760" y="193" text-anchor="middle">in TypeScript</text></g>
+</svg>

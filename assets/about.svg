@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="330" viewBox="0 0 840 330" role="img" aria-label="About Philipp: intern and apprentice Application Developer EFZ in Switzerland">
+<defs>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#22D3EE"/><stop offset="1" stop-color="#F472B6"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6" stop-opacity=".7"/><stop offset=".5" stop-color="#1E2742"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".7"/>
+  </linearGradient></defs>
+<style>
+  text{font:14.5px ui-monospace, SFMono-Regular, 'Cascadia Code', Consolas, 'Liberation Mono', monospace}
+  .p{fill:#34D399;font-weight:700}.p2{fill:#22D3EE;font-weight:700}
+  .cmd{fill:#E6EAF2}
+  .k{fill:#8B5CF6}.v{fill:#E6EAF2}.a{fill:#22D3EE}.c{fill:#F472B6;font-weight:700}.r{fill:#FF3B5C;font-weight:800}
+  .line{opacity:0;animation:show .01s linear forwards}
+  .o{animation:showUp .35s ease-out forwards}
+  @keyframes show{to{opacity:1}}
+  @keyframes showUp{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+  .type{width:0;animation:type .6s steps(12) forwards}
+  @keyframes type{to{width:var(--w)}}
+  .caret{fill:#22D3EE;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .title{font:600 12.5px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#8B95A9;letter-spacing:.4px}
+</style>
+<rect x="1" y="1" width="838" height="328" rx="18" fill="#0A0E1A" stroke="url(#edge)" stroke-width="1.5"/>
+<path d="M1 50h838" stroke="#1E2742"/>
+<circle cx="30" cy="26" r="6" fill="#FF5F57"/><circle cx="50" cy="26" r="6" fill="#FEBC2E"/><circle cx="70" cy="26" r="6" fill="#28C840"/>
+<text class="title" x="420" y="30" text-anchor="middle">philipp@ch — zsh — about-me</text>
+<g class="line" style="animation-delay:0.3s"><text class="p" x="36" y="92">philipp@ch</text><text class="p2" x="130" y="92">~ $</text>
+  <clipPath id="c92"><rect x="164" y="76" height="22" width="58.599999999999994" class="type" style="animation-delay:0.3s;--w:58.599999999999994px"/></clipPath>
+  <text class="cmd" x="166" y="92" clip-path="url(#c92)">whoami</text></g>
+<text xml:space="preserve" class="line o" x="36" y="119" style="animation-delay:1.2s"><tspan class="k">name     </tspan><tspan class="v">Philipp Klunder</tspan></text>
+<text xml:space="preserve" class="line o" x="36" y="146" style="animation-delay:1.42s"><tspan class="k">role     </tspan><tspan class="v">Intern · apprentice Application Developer EFZ</tspan></text>
+<text xml:space="preserve" class="line o" x="36" y="173" style="animation-delay:1.64s"><tspan class="k">where    </tspan><tspan class="v">Switzerland </tspan><tspan class="r">+</tspan></text>
+<g class="line" style="animation-delay:1.8599999999999999s"><text class="p" x="36" y="208">philipp@ch</text><text class="p2" x="130" y="208">~ $</text>
+  <clipPath id="c208"><rect x="164" y="192" height="22" width="104.1" class="type" style="animation-delay:1.8599999999999999s;--w:104.1px"/></clipPath>
+  <text class="cmd" x="166" y="208" clip-path="url(#c208)">cat now.txt</text></g>
+<text xml:space="preserve" class="line o" x="36" y="235" style="animation-delay:2.76s"><tspan class="a">▸ </tspan><tspan class="v">Building a full-stack assessment platform (Express · Prisma · Angular)</tspan></text>
+<text xml:space="preserve" class="line o" x="36" y="262" style="animation-delay:2.98s"><tspan class="a">▸ </tspan><tspan class="v">Side quest: </tspan><tspan class="c">cram</tspan><tspan class="v"> — iOS + FastAPI + Claude flashcards</tspan></text>
+<text xml:space="preserve" class="line o" x="36" y="289" style="animation-delay:3.2s"><tspan class="a">▸ </tspan><tspan class="v">Learning: clean architecture, testing, security</tspan></text>
+<g class="line" style="animation-delay:3.4200000000000004s"><text class="p" x="36" y="324">philipp@ch</text><text class="p2" x="130" y="324">~ $</text><rect class="caret" x="166" y="310" width="9" height="17"/></g>
+</svg>

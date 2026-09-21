@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="280" viewBox="0 0 840 280" role="img" aria-label="Philipp Klunder — Application Developer EFZ apprentice from Switzerland">
+<defs>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#22D3EE"/><stop offset="1" stop-color="#F472B6"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6" stop-opacity=".7"/><stop offset=".5" stop-color="#1E2742"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".7"/>
+  </linearGradient>
+  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="46"/></filter>
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#1E2742" stroke-width=".6"/></pattern>
+  <radialGradient id="fade" cx=".75" cy=".4" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  <mask id="gridMask"><rect width="840" height="280" fill="url(#fade)"/></mask>
+  <clipPath id="card"><rect x="1" y="1" width="838" height="278" rx="18"/></clipPath>
+  <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0" spreadMethod="reflect">
+    <stop offset="0" stop-color="#E6EAF2"/><stop offset=".35" stop-color="#22D3EE"/><stop offset=".65" stop-color="#8B5CF6"/><stop offset="1" stop-color="#E6EAF2"/>
+    <animateTransform attributeName="gradientTransform" type="translate" values="-0.6 0; 0.6 0; -0.6 0" dur="9s" repeatCount="indefinite"/>
+  </linearGradient>
+</defs>
+<style>
+  .b{animation:drift 14s ease-in-out infinite alternate}
+  .b2{animation-duration:18s;animation-delay:-6s}.b3{animation-duration:22s;animation-delay:-11s}
+  @keyframes drift{0%{transform:translate(0,0)}50%{transform:translate(-60px,30px)}100%{transform:translate(40px,-20px)}}
+  .hi{font:500 15px ui-monospace, SFMono-Regular, 'Cascadia Code', Consolas, 'Liberation Mono', monospace;fill:#8B95A9}
+  .name{font:800 54px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;letter-spacing:-1.5px}
+  .role{font:500 20px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#E6EAF2;opacity:0;animation:cycle 12s infinite both}
+  .r1{animation-delay:4s}.r2{animation-delay:8s}
+  @keyframes cycle{0%{opacity:0;transform:translateY(10px)}4%,30%{opacity:1;transform:translateY(0)}34%,100%{opacity:0;transform:translateY(-10px)}}
+  .caret{fill:#22D3EE;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .fl{font:600 18px ui-monospace, SFMono-Regular, 'Cascadia Code', Consolas, 'Liberation Mono', monospace;fill:#4B5570;opacity:.55;animation:float 7s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .tag{font:600 12px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#E6EAF2;letter-spacing:.5px}
+  .in{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .ping{transform-origin:62px 237px;animation:ping 2.4s ease-out infinite}
+  @keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(3);opacity:0}}
+</style>
+<rect x="1" y="1" width="838" height="278" rx="18" fill="#0A0E1A" stroke="url(#edge)" stroke-width="1.5"/>
+<g clip-path="url(#card)">
+  <g filter="url(#blur)" opacity=".55">
+    <circle class="b" cx="690" cy="70" r="110" fill="#8B5CF6"/>
+    <circle class="b b2" cx="560" cy="240" r="90" fill="#22D3EE"/>
+    <circle class="b b3" cx="800" cy="230" r="70" fill="#FF3B5C"/>
+  </g>
+  <rect width="840" height="280" fill="url(#grid)" mask="url(#gridMask)"/>
+  <text class="fl" style="animation-delay:-0s" x="470" y="60">{ }</text><text class="fl" style="animation-delay:-1.3s" x="560" y="60">&lt;/&gt;</text><text class="fl" style="animation-delay:-2.6s" x="650" y="60">=&gt;</text><text class="fl" style="animation-delay:-3.9000000000000004s" x="740" y="60">::</text><text class="fl" style="animation-delay:-5.2s" x="515" y="170">[]</text><text class="fl" style="animation-delay:-6.5s" x="605" y="170">&amp;&amp;</text><text class="fl" style="animation-delay:-7.800000000000001s" x="695" y="170">#</text><text class="fl" style="animation-delay:-9.1s" x="785" y="170">()</text>
+</g>
+<g class="in"><text class="hi" x="56" y="72">~/philklunder <tspan fill="#22D3EE">$</tspan> hello --world</text></g>
+<g class="in" style="animation-delay:.15s"><text class="name" x="52" y="140" fill="url(#nameGrad)">Philipp Klunder</text></g>
+<rect x="56" y="164" width="120" height="3" rx="1.5" fill="url(#brand)" class="in" style="animation-delay:.3s"/>
+<text class="role r0" x="56" y="196">Application Developer EFZ · apprentice</text><text class="role r1" x="56" y="196">Intern · shipping full-stack web apps</text><text class="role r2" x="56" y="196">TypeScript · Angular · Swift · C#</text>
+<g class="in" style="animation-delay:.5s">
+  <circle class="ping" cx="62" cy="237" r="5" fill="#34D399"/>
+  <circle cx="62" cy="237" r="5" fill="#34D399"/>
+  <text class="tag" x="76" y="241">OPEN TO LEARN · ALWAYS BUILDING</text>
+  <g transform="translate(330 225)">
+    <rect width="24" height="24" rx="5" fill="#FF3B5C"/>
+    <path d="M10 5h4v5h5v4h-5v5h-4v-5H5v-4h5z" fill="#fff"/>
+  </g>
+  <text class="tag" x="362" y="241">SWITZERLAND</text>
+</g>
+</svg>
