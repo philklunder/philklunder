@@ -2,6 +2,9 @@
 
 <img src="./assets/header.svg" width="100%" alt="Philipp Klunder — Application Developer EFZ apprentice from Switzerland"/>
 
+<a href="https://www.linkedin.com/in/philipp-klunder-1b2701326"><img src="https://img.shields.io/badge/LinkedIn-Philipp_Klunder-BE123C?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=130C11" alt="LinkedIn"/></a>
+<img src="https://komarev.com/ghpvc/?username=philklunder&style=for-the-badge&color=FDA4AF&label=PROFILE+VIEWS&labelColor=130C11" alt="Profile views"/>
+
 </div>
 
 <br/>
@@ -10,10 +13,11 @@
 
 ### 👋 Hey, I'm Philipp
 
-I'm an **intern** and currently doing my **apprenticeship as an Application Developer EFZ**
-(*Applikationsentwickler EFZ*) in 🇨🇭 **Switzerland**. Half of my week is school modules,
-the other half is real software that real people use — right now a full-stack assessment
-platform built with **Express, TypeScript, Prisma and Angular**.
+I'm an **intern** and an apprentice **Application Developer EFZ** (*Applikationsentwickler EFZ*)
+in 🇨🇭 **Switzerland**. I started my apprenticeship in **August 2023** and I'm now in my
+**4th and final year**. Part of my week is school modules, the rest is real software that
+real people use — right now a full-stack assessment platform built with
+**Express, TypeScript, Prisma and Angular**.
 
 I started out with small C# console and desktop apps, found my way to the web, then to mobile,
 and these days I enjoy the whole stack: from the database schema to the last pixel of the UI.
@@ -33,7 +37,7 @@ and these days I enjoy the whole stack: from the database schema to the last pix
 
 ### 🧰 Toolbox
 
-<img src="https://skillicons.dev/icons?i=ts,js,html,css,sass,angular,ionic,nodejs,express,prisma&perline=10&theme=dark" alt="TypeScript, JavaScript, HTML, CSS, Sass, Angular, Ionic, Node.js, Express, Prisma"/>
+<img src="https://skillicons.dev/icons?i=ts,js,html,css,sass,angular,nodejs,express,prisma&perline=10&theme=dark" alt="TypeScript, JavaScript, HTML, CSS, Sass, Angular, Node.js, Express, Prisma"/>
 <br/>
 <img src="https://skillicons.dev/icons?i=swift,py,fastapi,cs,dotnet,postgres,docker,git,vscode,visualstudio&perline=10&theme=dark" alt="Swift, Python, FastAPI, C#, .NET, PostgreSQL, Docker, Git, VS Code, Visual Studio"/>
 
@@ -41,7 +45,7 @@ and these days I enjoy the whole stack: from the database schema to the last pix
 
 <br/>
 
-<img src="./assets/journey.svg" width="100%" alt="Journey from first C# apps in 2025 to intern building a full-stack platform"/>
+<img src="./assets/journey.svg" width="100%" alt="Timeline from the start of my apprenticeship in August 2023 to the final year and the EFZ diploma in 2027"/>
 
 ### 🚀 Featured
 
@@ -56,9 +60,9 @@ and these days I enjoy the whole stack: from the database schema to the last pix
 
 <div align="center">
 
-### 📈 Activity
+### 🌹 Activity
 
-<img src="https://streak-stats.demolab.com?user=philklunder&background=0A0E1A&border=1E2742&stroke=1E2742&ring=8B5CF6&fire=F472B6&currStreakNum=E6EAF2&sideNums=E6EAF2&currStreakLabel=22D3EE&sideLabels=8B95A9&dates=4B5570&border_radius=18&hide_border=false" width="100%" alt="GitHub streak stats"/>
+<img src="./assets/activity.svg" width="100%" alt="Contribution heatmap, streaks, contributions per year and per month"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/philklunder/philklunder/output/snake-dark.svg"/>
@@ -66,6 +70,6 @@ and these days I enjoy the whole stack: from the database schema to the last pix
   <img alt="Contribution snake" src="https://raw.githubusercontent.com/philklunder/philklunder/output/snake-dark.svg" width="100%"/>
 </picture>
 
-<sub>Built with hand-made animated SVGs · language stats measured from my repositories</sub>
+<sub>Hand-made animated SVGs · contributions refreshed daily by a GitHub Action</sub>
 
 </div>

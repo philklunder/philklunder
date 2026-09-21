@@ -1,72 +1,124 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="250" viewBox="0 0 840 250" role="img" aria-label="Journey: from first C# apps in 2025 to intern building a full-stack platform">
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="812" viewBox="0 0 840 812" role="img" aria-label="Journey from starting the apprenticeship in August 2023 to the final year in 2026">
 <defs>
   <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#22D3EE"/><stop offset="1" stop-color="#F472B6"/>
+    <stop offset="0" stop-color="#BE123C"/><stop offset=".55" stop-color="#F43F5E"/><stop offset="1" stop-color="#FDA4AF"/>
   </linearGradient>
   <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#8B5CF6" stop-opacity=".7"/><stop offset=".5" stop-color="#1E2742"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".7"/>
-  </linearGradient></defs>
+    <stop offset="0" stop-color="#F43F5E" stop-opacity=".75"/><stop offset=".5" stop-color="#3A1E2A"/><stop offset="1" stop-color="#FDA4AF" stop-opacity=".55"/>
+  </linearGradient>
+  <linearGradient id="vline" gradientUnits="userSpaceOnUse" x1="0" y1="176" x2="0" y2="698"><stop offset="0" stop-color="#BE123C"/><stop offset="1" stop-color="#F6C177"/></linearGradient></defs>
 <style>
-  .h{font:700 20px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#E6EAF2}
-  .line{stroke-dasharray:680;stroke-dashoffset:680;animation:draw 2.2s .2s cubic-bezier(.4,0,.2,1) forwards}
+  .h{font:700 20px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#F5E9EE}.sub{font:13px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#B39BA6}
+  .pl{font:600 12px ui-monospace, SFMono-Regular, 'Cascadia Code', Consolas, 'Liberation Mono', monospace;fill:#F6C177}
+  .pb{transform-box:fill-box;transform-origin:left;transform:scaleX(0);animation:grow 1.6s .2s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes grow{to{transform:scaleX(1)}}
+  .line{stroke-dasharray:522;stroke-dashoffset:522;animation:draw 2.2s .4s linear forwards}
   @keyframes draw{to{stroke-dashoffset:0}}
   .node{opacity:0;animation:in .5s cubic-bezier(.2,.8,.2,1.4) forwards}
+  .future{animation-name:inDim}
   @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .d{font:700 11px ui-monospace, SFMono-Regular, 'Cascadia Code', Consolas, 'Liberation Mono', monospace;fill:#22D3EE;letter-spacing:1px}
-  .t{font:700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#E6EAF2}.s{font:12px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#8B95A9}
+  @keyframes inDim{from{opacity:0}to{opacity:.6}}
+  .d{font:700 11.5px ui-monospace, SFMono-Regular, 'Cascadia Code', Consolas, 'Liberation Mono', monospace;fill:#FDA4AF;letter-spacing:.5px}.dnow{fill:#F6C177}
+  .t{font:700 14.5px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#F5E9EE}.s{font:12.5px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#B39BA6}
   .pulse{transform-box:fill-box;transform-origin:center;animation:ping 2s ease-out infinite}
-  @keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}
-</style>
-<rect x="1" y="1" width="838" height="248" rx="18" fill="#0A0E1A" stroke="url(#edge)" stroke-width="1.5"/>
+  @keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}</style>
+<rect x="1" y="1" width="838" height="810" rx="18" fill="#130C11" stroke="url(#edge)" stroke-width="1.5"/>
+
 <text class="h" x="36" y="46">The road so far</text>
-<path d="M80 118H760" stroke="#1E2742" stroke-width="3" stroke-linecap="round"/>
-<path class="line" d="M80 118H760" stroke="url(#brand)" stroke-width="3" stroke-linecap="round"/>
-<g class="node" style="animation-delay:0.30s">
+<text class="sub" x="36" y="68">Apprenticeship · Application Developer EFZ · Aug 2023 – Summer 2027</text>
+<rect x="36" y="86" width="768" height="10" rx="5" fill="#1E1319"/>
+<rect class="pb" x="36" y="86" width="603.6" height="10" rx="5" fill="url(#brand)"/>
+<path d="M228 84v14" stroke="#130C11" stroke-width="2"/><path d="M420 84v14" stroke="#130C11" stroke-width="2"/><path d="M612 84v14" stroke="#130C11" stroke-width="2"/>
+<text class="sub" x="132" y="116" text-anchor="middle" >Year 1</text><text class="sub" x="324" y="116" text-anchor="middle" >Year 2</text><text class="sub" x="516" y="116" text-anchor="middle" >Year 3</text><text class="sub" x="708" y="116" text-anchor="middle" style="fill:#F6C177;font-weight:700">Year 4</text>
+<text class="pl" x="804" y="72" text-anchor="end">79% DONE</text>
+<path d="M420 176V756" stroke="#3A1E2A" stroke-width="3" stroke-linecap="round"/>
+<path class="line" d="M420 176V698" stroke="url(#vline)" stroke-width="3" stroke-linecap="round"/>
+<g class="node" style="animation-delay:0.50s">
   
-  <circle cx="80" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
-  <circle cx="80" cy="118" r="3.5" fill="#E6EAF2"/>
-  <text class="d" x="80" y="92" text-anchor="middle">2025</text>
-  <text class="t" x="80" y="156" text-anchor="middle">First steps</text>
-  <text class="s" x="80" y="176" text-anchor="middle">C# to-do app</text>
-  <text class="s" x="80" y="193" text-anchor="middle">&amp; calculator</text></g>
-<g class="node" style="animation-delay:0.65s">
+  <path d="M408 176H398" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="176" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="176" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="450" y="180" text-anchor="start">Aug 2023</text>
+  <text class="t" x="390" y="174" text-anchor="end">Apprenticeship begins</text>
+  <text class="s" x="390" y="192" text-anchor="end">Application Developer EFZ · year 1</text></g>
+<g class="node" style="animation-delay:0.70s">
   
-  <circle cx="216" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
-  <circle cx="216" cy="118" r="3.5" fill="#E6EAF2"/>
-  <text class="d" x="216" y="92" text-anchor="middle">2025</text>
-  <text class="t" x="216" y="156" text-anchor="middle">First website</text>
-  <text class="s" x="216" y="176" text-anchor="middle">Recipe book in</text>
-  <text class="s" x="216" y="193" text-anchor="middle">HTML · CSS · JS</text></g>
-<g class="node" style="animation-delay:1.00s">
+  <path d="M432 234H442" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="234" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="234" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="390" y="238" text-anchor="end">May 2024</text>
+  <text class="t" x="450" y="232" text-anchor="start">Hello, GitHub</text>
+  <text class="s" x="450" y="250" text-anchor="start">Account created, first commit</text></g>
+<g class="node" style="animation-delay:0.90s">
   
-  <circle cx="352" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
-  <circle cx="352" cy="118" r="3.5" fill="#E6EAF2"/>
-  <text class="d" x="352" y="92" text-anchor="middle">Dec 25</text>
-  <text class="t" x="352" y="156" text-anchor="middle">Exam project</text>
-  <text class="s" x="352" y="176" text-anchor="middle">Secure employee</text>
-  <text class="s" x="352" y="193" text-anchor="middle">app in C#</text></g>
-<g class="node" style="animation-delay:1.35s">
+  <path d="M408 292H398" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="292" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="292" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="450" y="296" text-anchor="start">Feb 2025</text>
+  <text class="t" x="390" y="290" text-anchor="end">First C# apps</text>
+  <text class="s" x="390" y="308" text-anchor="end">To-do list &amp; calculator</text></g>
+<g class="node" style="animation-delay:1.10s">
   
-  <circle cx="488" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
-  <circle cx="488" cy="118" r="3.5" fill="#E6EAF2"/>
-  <text class="d" x="488" y="92" text-anchor="middle">Mar 26</text>
-  <text class="t" x="488" y="156" text-anchor="middle">Going mobile</text>
-  <text class="s" x="488" y="176" text-anchor="middle">Angular + Ionic</text>
-  <text class="s" x="488" y="193" text-anchor="middle">GPS · QR · sensors</text></g>
+  <path d="M432 350H442" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="350" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="350" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="390" y="354" text-anchor="end">Feb 2025</text>
+  <text class="t" x="450" y="348" text-anchor="start">First website</text>
+  <text class="s" x="450" y="366" text-anchor="start">Recipe book in HTML · CSS · JS</text></g>
+<g class="node" style="animation-delay:1.30s">
+  
+  <path d="M408 408H398" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="408" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="408" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="450" y="412" text-anchor="start">Dec 2025</text>
+  <text class="t" x="390" y="406" text-anchor="end">Exam project</text>
+  <text class="s" x="390" y="424" text-anchor="end">Secure employee app in C#</text></g>
+<g class="node" style="animation-delay:1.50s">
+  
+  <path d="M432 466H442" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="466" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="466" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="390" y="470" text-anchor="end">Mar 2026</text>
+  <text class="t" x="450" y="464" text-anchor="start">Going mobile</text>
+  <text class="s" x="450" y="482" text-anchor="start">Angular + Ionic: GPS · QR · sensors</text></g>
 <g class="node" style="animation-delay:1.70s">
   
-  <circle cx="624" cy="118" r="9" fill="#0A0E1A" stroke="#8B5CF6" stroke-width="3"/>
-  <circle cx="624" cy="118" r="3.5" fill="#E6EAF2"/>
-  <text class="d" x="624" y="92" text-anchor="middle">Jul 26</text>
-  <text class="t" x="624" y="156" text-anchor="middle">cram</text>
-  <text class="s" x="624" y="176" text-anchor="middle">iOS · FastAPI</text>
-  <text class="s" x="624" y="193" text-anchor="middle">+ Claude</text></g>
-<g class="node" style="animation-delay:2.05s">
-  <circle class="pulse" cx="760" cy="118" r="9" fill="#22D3EE"/>
-  <circle cx="760" cy="118" r="9" fill="#0A0E1A" stroke="#22D3EE" stroke-width="3"/>
-  <circle cx="760" cy="118" r="3.5" fill="#22D3EE"/>
-  <text class="d" x="760" y="92" text-anchor="middle">Now</text>
-  <text class="t" x="760" y="156" text-anchor="middle">Intern</text>
-  <text class="s" x="760" y="176" text-anchor="middle">Full-stack platform</text>
-  <text class="s" x="760" y="193" text-anchor="middle">in TypeScript</text></g>
+  <path d="M408 524H398" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="524" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="524" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="450" y="528" text-anchor="start">Apr 2026</text>
+  <text class="t" x="390" y="522" text-anchor="end">Desktop with WPF</text>
+  <text class="s" x="390" y="540" text-anchor="end">BudgetTracker in C# / .NET</text></g>
+<g class="node" style="animation-delay:1.90s">
+  
+  <path d="M432 582H442" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="582" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="582" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="390" y="586" text-anchor="end">May 2026</text>
+  <text class="t" x="450" y="580" text-anchor="start">Full-stack Morse trainer</text>
+  <text class="s" x="450" y="598" text-anchor="start">Web app + PostgreSQL (module M323)</text></g>
+<g class="node" style="animation-delay:2.10s">
+  
+  <path d="M408 640H398" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="640" r="9" fill="#130C11" stroke="#F43F5E" stroke-width="3" />
+  <circle cx="420" cy="640" r="3.5" fill="#F5E9EE"/>
+  <text class="d" x="450" y="644" text-anchor="start">Jun 2026</text>
+  <text class="t" x="390" y="638" text-anchor="end">cram</text>
+  <text class="s" x="390" y="656" text-anchor="end">Native iOS · FastAPI · Claude</text></g>
+<g class="node" style="animation-delay:2.30s">
+  <circle class="pulse" cx="420" cy="698" r="9" fill="#F6C177"/>
+  <path d="M432 698H442" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="698" r="9" fill="#130C11" stroke="#F6C177" stroke-width="3" />
+  <circle cx="420" cy="698" r="3.5" fill="#F6C177"/>
+  <text class="d dnow" x="390" y="702" text-anchor="end">Aug 2026</text>
+  <text class="t" x="450" y="696" text-anchor="start">Final year + internship</text>
+  <text class="s" x="450" y="714" text-anchor="start">Full-stack platform in TypeScript</text></g>
+<g class="node future" style="animation-delay:2.50s">
+  
+  <path d="M408 756H398" stroke="#3A1E2A" stroke-width="2"/>
+  <circle cx="420" cy="756" r="9" fill="#130C11" stroke="#6B4A58" stroke-width="3" stroke-dasharray="3 3"/>
+  
+  <text class="d" x="450" y="760" text-anchor="start">Summer 2027</text>
+  <text class="t" x="390" y="754" text-anchor="end">EFZ diploma</text>
+  <text class="s" x="390" y="772" text-anchor="end">The finish line</text></g>
 </svg>
