@@ -201,45 +201,38 @@ function languages(data) {
   for (const [k, v] of Object.entries(data.bytes)) { const n = group[k] || k; g[n] = (g[n] || 0) + v; }
   const sum = Object.values(g).reduce((a, b) => a + b, 0);
   const list = Object.entries(g).sort((a, b) => b[1] - a[1]);
-  const top = list.slice(0, 8), rest = list.slice(8).reduce((a, [, v]) => a + v, 0);
+  const top = list.slice(0, 5), rest = list.slice(5).reduce((a, [, v]) => a + v, 0);
   if (rest) top.push(['Other', rest]);
-  const palette = ['#F43F5E', '#FDA4AF', '#F6C177', '#C084FC', '#FB923C', '#F472B6', '#FECDD3', '#BE123C', '#6B4A58'];
-  const W = 840, H = 400, cx = 170, cy = 212, R = 104, SW = 26, circ = 2 * Math.PI * R;
-  let acc = 0, ring = '', bars = '';
-  const maxPct = top[0][1] / sum;
+  const palette = ['#F43F5E', '#FDA4AF', '#F6C177', '#C084FC', '#FB923C', '#6B4A58'];
+  const W = 840, H = 214, bx = 36, bw = W - 72, by = 92;
+  let acc = 0, segs = '', legend = '';
   top.forEach(([name, v], i) => {
-    const pct = v / sum, len = Math.max(pct * circ - 2, 0.5), col = palette[i];
-    ring += `<circle class="seg" cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${col}" stroke-width="${SW}" stroke-dasharray="${len.toFixed(2)} ${circ.toFixed(2)}" stroke-dashoffset="${(-acc * circ).toFixed(2)}" transform="rotate(-90 ${cx} ${cy})" style="animation-delay:${(0.2 + i * 0.12).toFixed(2)}s"/>`;
+    const pct = v / sum, x = bx + acc * bw, w = pct * bw;
+    segs += `<rect class="seg" x="${x.toFixed(1)}" y="${by}" width="${Math.max(w - 2, 2).toFixed(1)}" height="16" fill="${palette[i]}" style="animation-delay:${(0.2 + acc * 1.2).toFixed(2)}s"/>`;
     acc += pct;
-    const y = 88 + i * 31, bw = Math.max((pct / maxPct) * 250, 4);
-    const label = pct < 0.001 ? '<0.1%' : (pct * 100).toFixed(1) + '%';
-    bars += `<g class="row" style="animation-delay:${(0.3 + i * 0.1).toFixed(2)}s">
-  <circle cx="370" cy="${y - 5}" r="5" fill="${col}"/><text class="ln" x="384" y="${y}">${esc(name)}</text>
-  <rect x="490" y="${y - 12}" width="250" height="12" rx="6" fill="${C.surface}"/>
-  <rect class="bar" x="490" y="${y - 12}" width="${bw.toFixed(1)}" height="12" rx="6" fill="${col}" style="animation-delay:${(0.4 + i * 0.1).toFixed(2)}s"/>
-  <text class="pc" x="${W - 36}" y="${y}" text-anchor="end">${label}</text></g>`;
+    const col = i % 3, row = Math.floor(i / 3), lx = bx + col * (bw / 3), ly = 146 + row * 30;
+    legend += `<g class="lg" style="animation-delay:${(0.6 + i * 0.1).toFixed(2)}s"><circle cx="${lx + 5}" cy="${ly - 4}" r="5" fill="${palette[i]}"/>
+  <text class="ln" x="${lx + 18}" y="${ly}">${esc(name)}</text><text class="pc" x="${lx + 118}" y="${ly}">${(pct * 100).toFixed(1)}%</text></g>`;
   });
   return svg(W, H, `Languages by code volume: ${top.map(([n, v]) => `${n} ${((v / sum) * 100).toFixed(1)}%`).join(', ')}`, `
   .h{font:700 20px ${SANS};fill:${C.text}}.sub{font:13px ${SANS};fill:${C.muted}}
   .ln{font:600 14px ${SANS};fill:${C.text}}.pc{font:600 13px ${MONO};fill:${C.muted}}
-  .seg{opacity:0;animation:pop .6s cubic-bezier(.2,.8,.2,1) forwards}
-  @keyframes pop{from{opacity:0;stroke-width:4}to{opacity:1;stroke-width:${SW}}}
-  .row{opacity:0;animation:fade .5s ease-out forwards}
-  @keyframes fade{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
-  .bar{transform-box:fill-box;transform-origin:left;transform:scaleX(0);animation:grow 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+  .seg{transform-box:fill-box;transform-origin:left;transform:scaleX(0);animation:grow .7s cubic-bezier(.2,.8,.2,1) forwards}
   @keyframes grow{to{transform:scaleX(1)}}
-  .big{font:800 34px ${SANS};fill:${C.text}}.small{font:600 11px ${SANS};fill:${C.muted};letter-spacing:1.5px}
-  .spin{transform-origin:${cx}px ${cy}px;animation:spin 24s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}`, `
+  .lg{opacity:0;animation:fade .5s ease-out forwards}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .shine{animation:shine 4s 2s ease-in-out infinite}
+  @keyframes shine{0%{transform:translateX(-120px)}60%,100%{transform:translateX(${W}px)}}`, `
 <text class="h" x="36" y="46">What I write</text>
 <text class="sub" x="36" y="68">by code volume across ${data.repositories} repositories · public &amp; private</text>
-<circle class="spin" cx="${cx}" cy="${cy}" r="${R + 24}" fill="none" stroke="url(#brand)" stroke-width="1.2" stroke-dasharray="2 9" opacity=".7"/>
-<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${C.surface}" stroke-width="${SW}"/>
-${ring}
-<text class="big" x="${cx}" y="${cy + 6}" text-anchor="middle">${list.length}</text>
-<text class="small" x="${cx}" y="${cy + 28}" text-anchor="middle">LANGUAGES</text>
-${bars}
-<text class="sub" x="36" y="${H - 22}">≈ ${(sum / 1e6).toFixed(1)} MB of source · C# shows up in ${data.repos['C#'] || 0} repos — small files, where it all started</text>`);
+<g clip-path="url(#barClip)">
+  <rect x="${bx}" y="${by}" width="${bw}" height="16" fill="${C.surface}"/>
+  ${segs}
+  <rect class="shine" x="0" y="${by}" width="80" height="16" fill="url(#shineGrad)"/>
+</g>
+${legend}`, `
+  <clipPath id="barClip"><rect x="${bx}" y="${by}" width="${bw}" height="16" rx="8"/></clipPath>
+  <linearGradient id="shineGrad"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>`);
 }
 
 /* ---------- 4. Contributions ---------- */
@@ -348,60 +341,51 @@ ${monthBars}`, `
 /* ---------- 5. Journey ---------- */
 function journey(progress) {
   const steps = [
-    ['Aug 2023', 'Apprenticeship begins', 'Application Developer EFZ · year 1'],
-    ['May 2024', 'Hello, GitHub', 'Account created, first commit'],
-    ['Feb 2025', 'First C# apps', 'To-do list & calculator'],
-    ['Feb 2025', 'First website', 'Recipe book in HTML · CSS · JS'],
-    ['Dec 2025', 'Exam project', 'Secure employee app in C#'],
-    ['Mar 2026', 'Going mobile', 'Angular + Ionic: GPS · QR · sensors'],
-    ['Apr 2026', 'Desktop with WPF', 'BudgetTracker in C# / .NET'],
-    ['May 2026', 'Full-stack Morse trainer', 'Web app + PostgreSQL (module M323)'],
-    ['Jun 2026', 'cram', 'Native iOS · FastAPI · Claude'],
-    ['Aug 2026', 'Final year + internship', 'Full-stack platform in TypeScript', 'now'],
-    ['Summer 2027', 'EFZ diploma', 'The finish line', 'next'],
+    ['Aug 2023', 'Apprenticeship', 'begins'],
+    ['Feb 2025', 'First repos', 'C# & the web'],
+    ['Dec 2025', 'Exam project', 'secure C# app'],
+    ['Mar 2026', 'Going mobile', 'Angular + Ionic'],
+    ['Jun 2026', 'cram', 'iOS + FastAPI'],
+    ['Now', 'Final year', '+ internship', 'now'],
+    ['2027', 'EFZ diploma', 'the goal', 'next'],
   ];
-  const W = 840, cx = 420, top = 176, gap = 58, H = top + (steps.length - 1) * gap + 56;
+  const W = 840, H = 270, x0 = 90, x1 = W - 90, ly = 180, gap = (x1 - x0) / (steps.length - 1), pbW = W - 72;
+  const lineLen = (steps.length - 2) * gap;
   const nodes = steps.map(([d, t, s, state], i) => {
-    const y = top + i * gap, left = i % 2 === 0, delay = (0.5 + i * 0.2).toFixed(2);
-    const tx = left ? cx - 30 : cx + 30, dx = left ? cx + 30 : cx - 30;
-    const ta = left ? 'end' : 'start', da = left ? 'start' : 'end';
-    const stroke = state === 'now' ? C.gold : state === 'next' ? C.dim : C.rose;
-    return `<g class="node${state === 'next' ? ' future' : ''}" style="animation-delay:${delay}s">
-  ${state === 'now' ? `<circle class="pulse" cx="${cx}" cy="${y}" r="9" fill="${C.gold}"/>` : ''}
-  <path d="M${left ? cx - 12 : cx + 12} ${y}H${left ? cx - 22 : cx + 22}" stroke="${C.border}" stroke-width="2"/>
-  <circle cx="${cx}" cy="${y}" r="9" fill="${C.bg}" stroke="${stroke}" stroke-width="3" ${state === 'next' ? 'stroke-dasharray="3 3"' : ''}/>
-  ${state === 'next' ? '' : `<circle cx="${cx}" cy="${y}" r="3.5" fill="${state === 'now' ? C.gold : C.text}"/>`}
-  <text class="d${state === 'now' ? ' dnow' : ''}" x="${dx}" y="${y + 4}" text-anchor="${da}">${esc(d)}</text>
-  <text class="t" x="${tx}" y="${y - 2}" text-anchor="${ta}">${esc(t)}</text>
-  <text class="s" x="${tx}" y="${y + 16}" text-anchor="${ta}">${esc(s)}</text></g>`;
+    const x = x0 + i * gap, stroke = state === 'now' ? C.gold : state === 'next' ? C.dim : C.rose;
+    return `<g class="node${state === 'next' ? ' future' : ''}" style="animation-delay:${(0.5 + i * 0.22).toFixed(2)}s">
+  ${state === 'now' ? `<circle class="pulse" cx="${x}" cy="${ly}" r="9" fill="${C.gold}"/>` : ''}
+  <circle cx="${x}" cy="${ly}" r="9" fill="${C.bg}" stroke="${stroke}" stroke-width="3" ${state === 'next' ? 'stroke-dasharray="3 3"' : ''}/>
+  ${state === 'next' ? '' : `<circle cx="${x}" cy="${ly}" r="3.5" fill="${state === 'now' ? C.gold : C.text}"/>`}
+  <text class="d${state === 'now' ? ' dnow' : ''}" x="${x}" y="${ly - 22}" text-anchor="middle">${esc(d)}</text>
+  <text class="t" x="${x}" y="${ly + 34}" text-anchor="middle">${esc(t)}</text>
+  <text class="s" x="${x}" y="${ly + 52}" text-anchor="middle">${esc(s)}</text></g>`;
   }).join('\n');
-  const lineLen = (steps.length - 2) * gap, pbW = W - 72;
-  return svg(W, H, `Journey from starting the apprenticeship in August 2023 to the final year in ${new Date().getUTCFullYear()}`, `
+  return svg(W, H, `Journey from the start of the apprenticeship in August 2023 to the EFZ diploma in 2027`, `
   .h{font:700 20px ${SANS};fill:${C.text}}.sub{font:13px ${SANS};fill:${C.muted}}
   .pl{font:600 12px ${MONO};fill:${C.gold}}
   .pb{transform-box:fill-box;transform-origin:left;transform:scaleX(0);animation:grow 1.6s .2s cubic-bezier(.2,.8,.2,1) forwards}
   @keyframes grow{to{transform:scaleX(1)}}
-  .line{stroke-dasharray:${lineLen};stroke-dashoffset:${lineLen};animation:draw ${(steps.length * 0.2).toFixed(1)}s .4s linear forwards}
+  .line{stroke-dasharray:${lineLen};stroke-dashoffset:${lineLen};animation:draw ${(steps.length * 0.22).toFixed(2)}s .5s linear forwards}
   @keyframes draw{to{stroke-dashoffset:0}}
   .node{opacity:0;animation:in .5s cubic-bezier(.2,.8,.2,1.4) forwards}
   .future{animation-name:inDim}
   @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   @keyframes inDim{from{opacity:0}to{opacity:.6}}
-  .d{font:700 11.5px ${MONO};fill:${C.blush};letter-spacing:.5px}.dnow{fill:${C.gold}}
-  .t{font:700 14.5px ${SANS};fill:${C.text}}.s{font:12.5px ${SANS};fill:${C.muted}}
+  .d{font:700 11px ${MONO};fill:${C.blush};letter-spacing:.5px}.dnow{fill:${C.gold}}
+  .t{font:700 13.5px ${SANS};fill:${C.text}}.s{font:12px ${SANS};fill:${C.muted}}
   .pulse{transform-box:fill-box;transform-origin:center;animation:ping 2s ease-out infinite}
   @keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}`, `
 <text class="h" x="36" y="46">The road so far</text>
-<text class="sub" x="36" y="68">Apprenticeship · Application Developer EFZ · Aug 2023 – Summer 2027</text>
-<rect x="36" y="86" width="${pbW}" height="10" rx="5" fill="${C.surface}"/>
-<rect class="pb" x="36" y="86" width="${(pbW * progress.ratio).toFixed(1)}" height="10" rx="5" fill="url(#brand)"/>
-${[1, 2, 3].map((k) => `<path d="M${36 + (pbW * k) / 4} 84v14" stroke="${C.bg}" stroke-width="2"/>`).join('')}
-${[1, 2, 3, 4].map((k) => `<text class="sub" x="${36 + (pbW * (k - 0.5)) / 4}" y="116" text-anchor="middle" ${k === progress.year ? `style="fill:${C.gold};font-weight:700"` : ''}>Year ${k}</text>`).join('')}
-<text class="pl" x="${W - 36}" y="72" text-anchor="end">${Math.round(progress.ratio * 100)}% DONE</text>
-<path d="M${cx} ${top}V${top + (steps.length - 1) * gap}" stroke="${C.border}" stroke-width="3" stroke-linecap="round"/>
-<path class="line" d="M${cx} ${top}V${top + lineLen}" stroke="url(#vline)" stroke-width="3" stroke-linecap="round"/>
+<text class="sub" x="36" y="68">Apprenticeship · Application Developer EFZ · year ${progress.year} of ${APPRENTICESHIP.years}</text>
+<text class="pl" x="${W - 36}" y="68" text-anchor="end">${Math.round(progress.ratio * 100)}% DONE</text>
+<rect x="36" y="84" width="${pbW}" height="8" rx="4" fill="${C.surface}"/>
+<rect class="pb" x="36" y="84" width="${(pbW * progress.ratio).toFixed(1)}" height="8" rx="4" fill="url(#brand)"/>
+${[1, 2, 3].map((k) => `<path d="M${36 + (pbW * k) / 4} 82v12" stroke="${C.bg}" stroke-width="2"/>`).join('')}
+<path d="M${x0} ${ly}H${x1}" stroke="${C.border}" stroke-width="3" stroke-linecap="round"/>
+<path class="line" d="M${x0} ${ly}H${x0 + lineLen}" stroke="url(#hline)" stroke-width="3" stroke-linecap="round"/>
 ${nodes}`, `
-  <linearGradient id="vline" gradientUnits="userSpaceOnUse" x1="0" y1="${top}" x2="0" y2="${top + lineLen}"><stop offset="0" stop-color="${C.crimson}"/><stop offset="1" stop-color="${C.gold}"/></linearGradient>`);
+  <linearGradient id="hline" gradientUnits="userSpaceOnUse" x1="${x0}" y1="0" x2="${x0 + lineLen}" y2="0"><stop offset="0" stop-color="${C.crimson}"/><stop offset="1" stop-color="${C.gold}"/></linearGradient>`);
 }
 
 function apprenticeship(now = new Date()) {
