@@ -1,7 +1,9 @@
-<div align="center">
+# Hi, I'm Philipp
 
-<img src="./assets/header.svg" width="100%" alt="Philipp Klunder — Application Developer EFZ apprentice from Switzerland"/>
+I'm an apprentice Application Developer EFZ from Switzerland. I started my apprenticeship in August 2023 and I'm now in my final year, working as an intern and finishing in 2027.
 
-<a href="https://www.linkedin.com/in/philipp-klunder-1b2701326"><img src="https://img.shields.io/badge/LinkedIn-Philipp_Klunder-C8102E?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=16161A" alt="LinkedIn"/></a>
+At work I build full-stack web apps with TypeScript, Angular, Express and Prisma. I got into programming through small C# console and desktop apps, then moved on to the web and later to mobile. These days I enjoy working across the whole stack, from the database schema to the UI.
 
-</div>
+On the side I'm building [cram](https://github.com/philklunder/cram), an iOS app that turns study material into spaced-repetition flashcards. Right now I'm trying to get better at clean architecture, testing and web security.
+
+You can find me on [LinkedIn](https://www.linkedin.com/in/philipp-klunder-1b2701326).
