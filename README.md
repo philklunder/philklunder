@@ -1,7 +1,7 @@
 
 <div align="center">
 
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:1d4ed8,100:38bdf8&height=220&section=header&text=Philipp%20Klunder&fontSize=46&fontColor=ffffff&fontAlignY=38&desc=APPLICATION%20DEVELOPER%20EFZ%20%7C%20SWITZERLAND&descSize=16&descAlignY=60" alt="Philipp Klunder" />
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:450a0a,50:b91c1c,100:ef4444&height=220&section=header&text=Philipp%20Klunder&fontSize=46&fontColor=ffffff&fontAlignY=38&desc=APPLICATION%20DEVELOPER%20EFZ%20%7C%20SWITZERLAND&descSize=16&descAlignY=60" alt="Philipp Klunder" />
 
   <h3>Hi, I'm Philipp.</h3>
 
@@ -12,7 +12,7 @@
 
   <p>
     <a href="https://www.linkedin.com/in/philipp-klunder-1b2701326/">
-      <img src="https://img.shields.io/badge/LinkedIn-Let's%20connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+      <img src="https://img.shields.io/badge/LinkedIn-Let's%20connect-b91c1c?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
     </a>
     <a href="https://github.com/philklunder?tab=repositories">
       <img src="https://img.shields.io/badge/GitHub-My%20repositories-24292f?style=for-the-badge&logo=github&logoColor=white" alt="GitHub repositories" />
@@ -56,5 +56,5 @@ What I enjoy most is working across the entire stack, from planning the database
 <div align="center">
   <sub>Always learning, always building.</sub>
   <br /><br />
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:1d4ed8,100:38bdf8&height=105&section=footer" alt="Footer wave" />
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:450a0a,50:b91c1c,100:ef4444&height=105&section=footer" alt="Footer wave" />
 </div>
